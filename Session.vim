@@ -7,14 +7,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +41 src/pages/Home.tsx
-badd +19 src/App.tsx
-badd +1 src/pages/NewRoom.tsx
-badd +74 src/contexts/AuthContext.tsx
-badd +3 src/pages/Room.tsx
+badd +76 src/pages/Room.tsx
+badd +81 src/styles/room.scss
 argglobal
 %argdel
-edit src/pages/Home.tsx
+edit src/styles/room.scss
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -30,12 +27,12 @@ setlocal fdl=2
 setlocal fml=1
 setlocal fdn=10
 setlocal nofen
-let s:l = 41 - ((19 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-41
-normal! 039|
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
