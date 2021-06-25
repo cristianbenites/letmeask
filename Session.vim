@@ -7,11 +7,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +76 src/pages/Room.tsx
-badd +81 src/styles/room.scss
+badd +9 src/pages/Room.tsx
+badd +1 src/hooks/useRoom.ts
+badd +47 src/pages/Home.tsx
 argglobal
 %argdel
-edit src/styles/room.scss
+edit src/hooks/useRoom.ts
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -27,7 +28,7 @@ setlocal fdl=2
 setlocal fml=1
 setlocal fdn=10
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 8) / 17)
+let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
