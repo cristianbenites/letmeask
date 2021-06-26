@@ -19,6 +19,9 @@
 .env.production.local
 Session.vim
 
+.firebaserc
+.firebase/*
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
